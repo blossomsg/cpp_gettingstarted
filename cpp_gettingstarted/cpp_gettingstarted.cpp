@@ -1,20 +1,22 @@
-// cpp_gettingstarted.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Definition and use of variables
+#include<iostream>
+// using namespace std;
 
-#include <iostream>
+int gVar1;         // Global variables,
+int gVar2 = { 2 };     // explicit initialization
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main() {
+	char ch{ 'A' };  // Local variable being initialized
+					// or: char ch = 'A';
+
+	std::cout << "Value of gVar1:     " << gVar1 << std::endl;
+	std::cout << "Value of gVar2:     " << gVar2 << std::endl;
+	std::cout << "Character in ch:     " << ch << std::endl;
+
+	int sum, number = { 3 }; // Local variables with and without initialization
+
+	sum = number + 3;
+	std::cout << "Value of sum:        " << sum << std::endl;
+
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

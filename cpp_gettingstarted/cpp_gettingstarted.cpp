@@ -1,22 +1,18 @@
-// Definition and use of variables
+// Circumference and area of a circle with radius 2.5
 #include<iostream>
-// using namespace std;
+//using namespace std;
 
-int gVar1;         // Global variables,
-int gVar2 = { 2 };     // explicit initialization
+const double pi = { 3.141593 };
 
 int main() {
-	char ch{ 'A' };  // Local variable being initialized
-					// or: char ch = 'A';
+	double area, circuit, radius = { 1.5 };
 
-	std::cout << "Value of gVar1:     " << gVar1 << std::endl;
-	std::cout << "Value of gVar2:     " << gVar2 << std::endl;
-	std::cout << "Character in ch:     " << ch << std::endl;
-
-	int sum, number = { 3 }; // Local variables with and without initialization
-
-	sum = number + 3;
-	std::cout << "Value of sum:        " << sum << std::endl;
+	area = pi * radius * radius;
+	circuit = 2 * pi * radius;
+	std::cout << "\nTo Evaluate a Circle\n" << std::endl;
+	std::cout << "Radius:       " << radius << std::endl;
+	std::cout << "Circumference:       " << circuit << std::endl;
+	std::cout << "Area:       " << area << std::endl;
 
 	return 0;
 }

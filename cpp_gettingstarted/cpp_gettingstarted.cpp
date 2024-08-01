@@ -1,14 +1,12 @@
 #include<iostream>
 
 int main() {
-	std::cout << sizeof(short) << std::endl;
-	std::cout << sizeof(long) << std::endl;
-	std::cout << sizeof(int) << std::endl;
-	std::cout << sizeof(bool) << std::endl;
-	std::cout << sizeof(char) << std::endl;
-	std::cout << sizeof(float) << std::endl;
-	std::cout << sizeof(double) << std::endl;
-	std::cout << sizeof(long double) << std::endl;
+	float val1 = { 123.456F };  // or double
+	float val2 = { 76.543F };
+	float sum, diff;
 
-	return 0;
+	sum = val1 + val2;
+	diff = val1 - val2;
+	std::cout << "Sum: " << sum << std::endl;
+	std::cout << "Diff: " << diff << std::endl;
 }

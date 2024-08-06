@@ -1,28 +1,22 @@
-// Outputs three random numbers
+// To use strings.
 
-#include<iostream>  // Declaration of cin and cout
-#include<cstdlib>   // Prototypes of srand(), rand():
-                    // void srand( unsigned int seed );
-                    // int rand( void );
+#include <iostream>  // Declaration of cin, cout
+#include <string>    // Declaration of class string
 
 int main() {
-    unsigned int seed;
-    int z1;
-    int z2;
-    int z3;
+	// Defines four strings:
+	std::string prompt("What is your name: ");
+	std::string name; // An empty
+	std::string line(40, '-'); // string with 40 '-'
+	std::string total = "Hello ";
 
-    std::cout << " --- Random Numbers --- \n" << std::endl;
-    std::cout << "To initialize the random number generator," << "\n please enter an integer value:";
+	std::cout << prompt; // Request for input.
+	std::getline(std::cin, name); // Inputs a name in one line
+	total = total + name;  // Concatenates and assigns strings.
 
-    std::cin >> seed; // Input an integer
+	std::cout << line << std::endl << total << std::endl;
+	std::cout << "Your name is " << name.length() << "characters long!" << std::endl;
+	std::cout << line << std::endl;
 
-    srand(seed); // and use it as argument for a new seq of random numbers.
-
-    z1 = rand(); // Compute three random numbers
-    z2 = rand();
-    z3 = rand();
-
-    std::cout << "\nThree random numbers: " << z1 << " " << z2 << " " << z3 << std::endl;
-
-    return 0;
+	return 0;
 }

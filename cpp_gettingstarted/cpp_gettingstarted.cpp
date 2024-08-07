@@ -1,22 +1,17 @@
-// To use strings.
-
-#include <iostream>  // Declaration of cin, cout
-#include <string>    // Declaration of class string
+#include <iostream>
+#include <math.h>
 
 int main() {
-	// Defines four strings:
-	std::string prompt("What is your name: ");
-	std::string name; // An empty
-	std::string line(40, '-'); // string with 40 '-'
-	std::string total = "Hello ";
-
-	std::cout << prompt; // Request for input.
-	std::getline(std::cin, name); // Inputs a name in one line
-	total = total + name;  // Concatenates and assigns strings.
-
-	std::cout << line << std::endl << total << std::endl;
-	std::cout << "Your name is " << name.length() << "characters long!" << std::endl;
-	std::cout << line << std::endl;
+	double number01 = { 4 };
+	double number02 = { 12.25 };
+	double number03 = { 0.0121 };
+	
+	std::cout << "Number" << "\tSquare Root" << std::endl;
+	std::cout << "\n" << std::endl;
+	std::cout << number01 << "\t" <<std::sqrt(number01) << std::endl;
+	std::cout << number02 << "\t" << std::sqrt(number02) << std::endl;
+	std::cout << number03 << "\t" << std::sqrt(number03) << std::endl;
 
 	return 0;
+
 }

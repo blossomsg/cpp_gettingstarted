@@ -1,17 +1,19 @@
-#include <iostream>
-#include <math.h>
+// A program containing errors!
+# include <iostream>
+#include <string>
+#include <cstdlib>
 
-int main() {
-	double number01 = { 4 };
-	double number02 = { 12.25 };
-	double number03 = { 0.0121 };
-	
-	std::cout << "Number" << "\tSquare Root" << std::endl;
-	std::cout << "\n" << std::endl;
-	std::cout << number01 << "\t" <<std::sqrt(number01) << std::endl;
-	std::cout << number02 << "\t" << std::sqrt(number02) << std::endl;
-	std::cout << number03 << "\t" << std::sqrt(number03) << std::endl;
+//void srand(double seed);
 
+int main(){
+	std::string message = { "\nLearn from your mistakes!" };
+	std::cout << message << std::endl;
+	int len = message.length();
+	std::cout << "Length of the string: " << len << std::endl;
+	// And a random number in addition:
+	int b;
+	srand(12.5);
+	b = rand();
+	std::cout << "\nRandom number: " << b << std::endl;
 	return 0;
-
 }

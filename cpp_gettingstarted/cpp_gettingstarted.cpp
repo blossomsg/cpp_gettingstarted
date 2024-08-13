@@ -1,19 +1,24 @@
-// A program containing errors!
-# include <iostream>
-#include <string>
-#include <cstdlib>
+#include<iostream>
+#include<string>
 
-//void srand(double seed);
+int main() {
+	std::string text = { "I have learned something new again!" };
+	std::string prompt = { "Please input two lines of text:" };
+	std::string  str1;
+	std::string  str2;
+	std::string  sum;
 
-int main(){
-	std::string message = { "\nLearn from your mistakes!" };
-	std::cout << message << std::endl;
-	int len = message.length();
-	std::cout << "Length of the string: " << len << std::endl;
-	// And a random number in addition:
-	int b;
-	srand(12.5);
-	b = rand();
-	std::cout << "\nRandom number: " << b << std::endl;
+	std::cout << text << std::endl;
+	std::cout << prompt << std::endl;
+	
+	getline(std::cin, str1);
+	getline(std::cin, str1);
+
+	sum = str1 + "*" + str2;
+	std::cout << sum << std::endl;
+	std::cout << text.length() << std::endl;
+
+
 	return 0;
+
 }

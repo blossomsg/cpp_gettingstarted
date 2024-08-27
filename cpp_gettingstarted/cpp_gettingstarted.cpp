@@ -26,5 +26,13 @@ int main() {
 	std::string prompt = "\nPlease enter a character followed by <return>:";
 	std::cout << prompt;
 
+	std::cin >> ch;  // Read a character
+	number = ch;
+	std::cout << "The character " << ch << "has code" << number << std::endl;
+
+	std::cout << std::uppercase << "        octal   decimal   hexadecimal\n" << std::oct << std::setw(8) << number << std::dec << std::setw(8) << number << std::hex << std::setw(8) << number << std::endl;
+
+	return 0;
+
 
 }

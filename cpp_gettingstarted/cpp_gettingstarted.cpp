@@ -1,38 +1,14 @@
-// C++ primer 5th edition examples
 #include<iostream>
 #include<iomanip>
-#include<string>
 
 int main() {
-	int i = { -16 };
-	double d = 3.14159;
-
-	// pad the first column to use a minimum of 12 positions in the output
-	std::cout << "i: " << std::setw(12) << i << "next col" << '\n';
-	std::cout << "d: " << std::setw(12) << d << "next col" << '\n';
-	std::cout << std::left << "i: " << std::setw(12) << i << "next col" << '\n';
-	std::cout << std::left << "d: " << std::setw(12) << d << "next col" << '\n';
-	std::cout << std::right << "i: " << std::setw(12) << i << "next col" << '\n';
-	std::cout << std::right << "d: " << std::setw(12) << d << "next col" << '\n';
-	std::cout << std::internal << "i: " << std::setw(12) << i << "next col" << '\n';
-	std::cout << std::internal << "d: " << std::setw(12) << d << "next col" << '\n';
-	std::cout << std::setfill(' ') << "i: " << std::setw(12) << i << "next col" << '\n';
-	std::cout << std::setfill(' ') << "d: " << std::setw(12) << d << "next col" << '\n';
-
-	// ulla kirch manipulators
-	int number = ' ';
-	std::cout << "The white space code is as follows: " << number << std::endl;
-	char ch;
-	std::string prompt = "\nPlease enter a character followed by <return>:";
-	std::cout << prompt;
-
-	std::cin >> ch;  // Read a character
-	number = ch;
-	std::cout << "The character " << ch << "has code" << number << std::endl;
-
-	std::cout << std::uppercase << "        octal   decimal   hexadecimal\n" << std::oct << std::setw(8) << number << std::dec << std::setw(8) << number << std::hex << std::setw(8) << number << std::endl;
+	double number1 = { 0.123456 };
+	double number2 = { 23.987 };
+	double number3 = { -123.456 };
+	std::cout << std::left << std::setw(15) << number1 << std::endl;
+	std::cout<< std::setprecision(2) << std::fixed << std::right << std::setw(12) << number2 << std::endl;
+	std::cout << std::scientific << std::setprecision(4) << number3 << std::endl;
 
 	return 0;
-
 
 }

@@ -2,22 +2,19 @@
 #include<iomanip>
 
 int main() {
-	int article_number;
-	int quantity;
-	double unit_price;
+	unsigned char ch;
+	unsigned int num;
 
-	std::cout << "Article Number:    ";
-	std::cin >> article_number;
+	std::cin >> num;
 
-	std::cout << "Quantity:    ";
-	std::cin >> quantity;
+	ch = num;
 
-	std::cout << "Price per piece:    ";
-	std::cin >> unit_price;
+	std::cout << "The character:  " << ch << std::endl;
 
-	std::cout << "Article Number" << std::setw(20) << "Number of Pieces" << std::setw(20) << "Unit Price" << std::endl;
-	std::cout << "\t" << article_number << std::setw(20)<< quantity << std::setw(20) << std::fixed << std::setprecision(2) << unit_price << " Dollar" << std::endl;
+	num = ch;
 	
-
+	std::cout << std::uppercase << std::hex << ch << std::endl;
+	std::cout << std::oct << "\n" <<ch << std::endl;
+	std::cout << std::dec << "\n" << ch << std::endl;
 	return 0;
 }

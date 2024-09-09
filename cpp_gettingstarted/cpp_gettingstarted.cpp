@@ -1,12 +1,14 @@
 #include<iostream>
 
 int main() {
-	double x;
-	double y;
+	int i = { 2 };
+	int j = { 8 };
+	int k = { 3 };
 
-	std::cout << "\n Enter two floating-point values: ";
-	std::cin >> x >> y;
-	std::cout << "The average of the two numbers are: " << (x + y) / 2.0 << std::endl;
-
-	return 0;
+	std::cout << i++ << std::endl;  //output 2
+	std::cout << i << std::endl;  //output 3
+	std::cout << j-- << std::endl;  //output 8
+	std::cout << j << std::endl;  //output 7
+	std::cout << --j << std::endl;  //output 6
+	std::cout << ++k << std::endl;  //output 4
 }

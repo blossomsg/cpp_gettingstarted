@@ -1,14 +1,28 @@
+//directive
 #include<iostream>
 
-int main() {
-	int i = { 2 };
-	int j = { 8 };
-	int k = { 3 };
 
-	std::cout << i++ << std::endl;  //output 2
-	std::cout << i << std::endl;  //output 3
-	std::cout << j-- << std::endl;  //output 8
-	std::cout << j << std::endl;  //output 7
-	std::cout << --j << std::endl;  //output 6
-	std::cout << ++k << std::endl;  //output 4
+void print_something(); //Prototypes
+double hypotenuse_of_triangle(double base, double height, double exponent); //Prototypes
+int some_value{ 15 };
+
+int main(void) {
+	print_something();
+	double hypotenuse{ std::sqrt(hypotenuse_of_triangle(10, 25, 2)) };
+	int& rsome_value{ some_value };
+	std::cout << &rsome_value << "\n" << rsome_value << "\n" << --rsome_value << std::endl;
+
+
+	return 0;
+}
+
+//Function Prototypes
+void print_something() {
+	std::cout << "something" << std::endl;
+}
+
+double hypotenuse_of_triangle(double base, double height, double exponent) {
+	//hyp^2=base^2+height^2
+	double hypotenuse{ std::pow(base, exponent) + std::pow(height, exponent) };
+	return hypotenuse;
 }

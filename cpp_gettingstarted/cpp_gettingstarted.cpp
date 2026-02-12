@@ -1,28 +1,34 @@
-//directive
 #include<iostream>
 
+int x = 10;
+int x2 = 20;
+int x3 = 30;
 
-void print_something(); //Prototypes
-double hypotenuse_of_triangle(double base, double height, double exponent); //Prototypes
-int some_value{ 15 };
+void rincrement(int &x); //Reference function
+void vincrement(int x); //Value function
+void pincrement(int *x); //Pointer function
 
-int main(void) {
-	print_something();
-	double hypotenuse{ std::sqrt(hypotenuse_of_triangle(10, 25, 2)) };
-	int& rsome_value{ some_value };
-	std::cout << &rsome_value << "\n" << rsome_value << "\n" << --rsome_value << std::endl;
+int main() {
+	rincrement(x);
+	std::cout << "Ref increment: " << x << std::endl;
 
+	vincrement(x2);
+	std::cout << "Val increment: " << x2 << std::endl;
+
+	pincrement(&x3);
+	std::cout << "Pointer increment: " << x3 << std::endl;
 
 	return 0;
 }
 
-//Function Prototypes
-void print_something() {
-	std::cout << "something" << std::endl;
+void rincrement(int &x) {
+	++x;
 }
 
-double hypotenuse_of_triangle(double base, double height, double exponent) {
-	//hyp^2=base^2+height^2
-	double hypotenuse{ std::pow(base, exponent) + std::pow(height, exponent) };
-	return hypotenuse;
+void vincrement(int x) {
+	++x;
+}
+
+void pincrement(int *x) {
+	++*x;
 }

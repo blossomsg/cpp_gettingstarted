@@ -1,16 +1,24 @@
 #include<iostream>
+#include<string>
 #include<fstream>
 
-int main(int argc, char *argv[]) {
-	/*This is a command line tool.
-	* path: ./x64/Debug/cpp_gettingstarted.exe name1 name2 to run it.
-	*/
-	if (argc != 3) {
-		std::cerr << "Use: hello name1 name2" << std::endl;
-		return 1;
-	}
-	std::cout << "Hello " << argv[1] << "!" << std::endl;
-	std::cout << "Best wishes \n" << "\tyours " << argv[2] << std::endl;
-	return 0;
+std::string read_source(const char *filepath);
+
+int main() {
+	std::string file { read_source("cpp_gettingstarted.cpp") };
+	std::cout << file << std::endl;
 
 }
+
+std::string read_source(const char *filepath){
+	std::string file_content{};
+	std::ifstream file_stream(filepath, std::ios::in);
+	std::string line{};
+	while (!file_stream.eof()) {
+		getline(file_stream, line);
+		file_content.append(line + "\n");
+	}
+	file_stream.close();
+	return file_content;
+}
+	

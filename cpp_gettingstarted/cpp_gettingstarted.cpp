@@ -1,24 +1,33 @@
-#include<iostream>
-#include<string>
-#include<fstream>
+#include <fstream>
+#include <iostream>
+#include <string>
 
-std::string read_source(const char *filepath);
+std::string readFile(const char *filePath);
+void writeFile(const char *filePath, const std::string data);
 
 int main() {
-	std::string file { read_source("cpp_gettingstarted.cpp") };
-	std::cout << file << std::endl;
 
+  writeFile("something.txt", "New text.\nExploring new stuff.\n");
+  std::string file{readFile("something.txt")};
+  std::cout << file << std::endl;
 }
 
-std::string read_source(const char *filepath){
-	std::string file_content{};
-	std::ifstream file_stream(filepath, std::ios::in);
-	std::string line{};
-	while (!file_stream.eof()) {
-		getline(file_stream, line);
-		file_content.append(line + "\n");
-	}
-	file_stream.close();
-	return file_content;
+// This function reads data from \p filePath.
+std::string readFile(const char *filePath) {
+  std::string content{};
+  std::fstream fileStream(filePath, std::ios::in);
+  std::string line{};
+
+  while (!fileStream.eof()) {
+    std::getline(fileStream, line);
+    content.append(line + "\n");
+  }
+  fileStream.close();
+  return content;
 }
-	
+
+// This function writes \p data to \p filePath.
+void writeFile(const char *filePath, const std::string data) {
+  std::fstream fileStream(filePath, std::ios::out | std::ios::trunc);
+  fileStream << data;
+}

@@ -1,11 +1,9 @@
-#include <fstream>
+#include "utils.h"
 #include <iostream>
-#include <string>
-#include "utilities.h"
 
 int main() {
-
-  writeFile("something.txt", "New Calls,\nFrom headers.\n");
-  std::string file{readFile("something.txt")};
+    writes_source("something.txt",
+        "first line\nnewline also works");
+      std::string file{reads_source("something.txt")};
   std::cout << file << std::endl;
 }

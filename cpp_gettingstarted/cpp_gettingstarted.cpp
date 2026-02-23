@@ -1,9 +1,8 @@
-#include "utils.h"
-#include <iostream>
+#include "account.h"
 
 int main() {
-    writes_source("something.txt",
-        "first line\nnewline also works");
-      std::string file{reads_source("something.txt")};
-  std::cout << file << std::endl;
+	Account current1, current2;
+	current1.init("Cheers, Mary", 123456789, -1200.99);
+	current1.display();
+	return 0;
 }

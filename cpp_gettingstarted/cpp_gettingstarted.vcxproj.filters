@@ -18,18 +18,18 @@
     <ClCompile Include="cpp_gettingstarted.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="account.cpp">
+    <ClCompile Include="vehicle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="vehicle.cpp">
+    <ClCompile Include="account.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="account.h">
+    <ClInclude Include="vehicle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vehicle.h">
+    <ClInclude Include="account.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,13 +1,16 @@
-#include "vehicle.h"
+// Return values in feet and inches eg: 77 inches is 6ft 5in
+#include <iostream>
 
-int main() {
-  Vehicle bike1, car1;
+int main(void) {
+  unsigned int inches{};
+  unsigned int feet{};
+  const unsigned inches_per_foot{12};
 
-  bike1.init("Apache", "TVS", 160);
-  bike1.display();
+  std::cin >> inches;
 
-  car1.init("Celerio", "Maruti Suzuki", 1200);
-  car1.display();
+  feet = inches / inches_per_foot;
+  inches %= inches_per_foot;
+  std::cout << "result: " << feet << " feet " << inches << " inches " << std::endl;
 
   return 0;
 }

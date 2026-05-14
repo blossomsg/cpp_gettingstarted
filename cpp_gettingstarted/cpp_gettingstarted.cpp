@@ -1,53 +1,16 @@
-#include "account.h"
-#include "vehicle.h"
+// Return values in feet and inches eg: 77 inches is 6ft 5in
 #include <iostream>
-#include <string>
 
-bool getAccount(Account *pAccount);
+int main(void) {
+  unsigned int inches{};
+  unsigned int feet{};
+  const unsigned inches_per_foot{12};
 
-int main() {
-  Account current1, current2, *ptr = &current1;
-  Vehicle bike1, car1;
+  std::cin >> inches;
 
-  ptr->init("John Doe", 123456, 569.00);
-  ptr->display();
-
-  ptr = &current2;
-  if (getAccount(ptr)) {
-	  ptr->display();
-  }
-  else {
-      std::cout << "Invalid input!!!!" << std::endl;
-  }
-
-  bike1.init("Apache", "TVS", 160);
-  bike1.display();
-
-  car1.init("Celerio", "Maruti Suzuki", 1200);
-  car1.display();
+  feet = inches / inches_per_foot;
+  inches %= inches_per_foot;
+  std::cout << "result: " << feet << " feet " << inches << " inches " << std::endl;
 
   return 0;
-}
-
-bool getAccount(Account *pAccount) {
-  std::string name;
-  std::string line(50, '-');
-  unsigned long nr;
-  double startcapital;
-  std::cout << line << "\n"
-            << "Enter data for a new account: \n"
-            << "Account holder: ";
-  if (!getline(std::cin, name) || name.size() == 0) {
-    return false;
-  }
-  std::cout << "Account Number: ";
-  if (!(std::cin >> nr)) {
-    return false;
-  }
-  std::cout << "Starting Capital: ";
-  if (!(std::cin >> startcapital)) {
-    return false;
-  }
-  pAccount->init(name, nr, startcapital);
-  return true;
 }

@@ -1,16 +1,20 @@
-// Return values in feet and inches eg: 77 inches is 6ft 5in
+// Area of Circle pi*sqrt(r)
 #include <iostream>
+// new lib
+#include <numbers>
 
 int main(void) {
-  unsigned int inches{};
-  unsigned int feet{};
-  const unsigned inches_per_foot{12};
+	// new constant style
+  const double pi{std::numbers::pi_v<double>};
+  double radius{};
+  double area{};
 
-  std::cin >> inches;
+  std::cout << "Enter radius: ";
+  std::cin >> radius;
 
-  feet = inches / inches_per_foot;
-  inches %= inches_per_foot;
-  std::cout << "result: " << feet << " feet " << inches << " inches " << std::endl;
+  area = pi * radius * radius;
+
+  std::cout << "Area of Circle: " << area << std::endl;
 
   return 0;
 }

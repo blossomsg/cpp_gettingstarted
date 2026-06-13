@@ -1,20 +1,10 @@
-// Area of Circle pi*sqrt(r)
 #include <iostream>
-// new lib
-#include <numbers>
+#include <string>
 
-int main(void) {
-	// new constant style
-  const double pi{std::numbers::pi_v<double>};
-  double radius{};
-  double area{};
+int main() {
+	std::string path{ R"(F:\All_Projs\c++_Proj\OGLPractise\OGL_Proj\OGL_Proj\vertexShader.glsl)" };
 
-  std::cout << "Enter radius: ";
-  std::cin >> radius;
+	std::cout << path << std::endl;
 
-  area = pi * radius * radius;
-
-  std::cout << "Area of Circle: " << area << std::endl;
-
-  return 0;
+	return 0;
 }
